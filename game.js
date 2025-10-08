@@ -1,8 +1,8 @@
 class NinetynineGame {
     constructor(target = 99, base = 10) {
         this.base = base;
-        this.overflow = Math.floor(Math.log(target) / Math.log(base)) + 1;
-        this.moves = 0;
+        this.overflow = Math.pow(base, Math.floor(Math.log(target) / Math.log(base)) + 1);
+        this.currentMove = 1;
         this.targetNum = target;
         this.currentNum = this.randint(0, target - 1);
         this.buttonNums = [
@@ -15,9 +15,8 @@ class NinetynineGame {
     }
 
     buttonPress(buttonNum) {
-        this.currentNum = (this.currentNum + this.buttonNums[buttonNum]) % this.overflow;
-        this.moves++;
-        return this.currentNum == this.targetNum;
+        this.currentNum = (this.currentNum + this.buttonNums[buttonNum - 1]) % this.overflow;
+        this.currentMove++;
     }
 
     randint(min = 1, max = 100) {
