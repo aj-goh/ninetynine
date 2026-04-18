@@ -20,8 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function refreshValues() {
         num.textContent = game.currentNum;
-        move.textContent = game.currentMove;
-        if (game.currentNum == game.targetNum) btns.forEach(btn => btn.disabled = true);
+
+        if (game.isWin) {
+            move.textContent = `Won in ${game.currentMove} moves`;
+            btns.forEach(btn => btn.disabled = true);
+        }
+
+        else {
+            move.textContent = `Move ${game.currentMove}`;
+        }
     }
 
     refreshValues();

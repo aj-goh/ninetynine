@@ -1,28 +1,50 @@
-class NinetynineGame {
+class Game {
     constructor(target = 99, base = 10) {
         this.base = base;
-        this.overflow = Math.pow(base, Math.floor(Math.log(target) / Math.log(base)) + 1);
+        this.overflow = base ** (Math.floor(Math.log(target) / Math.log(base)) + 1);
+
+        this.isWin = false;
         this.currentMove = 1;
+
         this.targetNum = target;
-        this.currentNum = this.randint(0, target - 1);
+        this.currentNum = (() => {
+            const n = this._randint(0, this.overflow - 2);
+            return n < this.targetNum ? n : n + 1;
+        })();
         this.buttonNums = [
-            this.randint(1, this.overflow / 2),
-            this.randint(1, this.overflow / 2),
-            this.randint(1, this.overflow / 2),
-            this.randint(this.overflow / 2 + 1, this.overflow - 1),
-            this.randint(this.overflow / 2 + 1, this.overflow - 1)
+            this._randint(1, this.overflow / 2),
+            this._randint(1, this.overflow / 2),
+            this._randint(1, this.overflow / 2),
+            this._randint(this.overflow / 2 + 1, this.overflow - 1),
+            this._randint(this.overflow / 2 + 1, this.overflow - 1)
         ];
     }
 
     buttonPress(buttonNum) {
+        if (this.isWin) return;
+
+        if (!Number.isInteger(buttonNum) || buttonNum < 1 || buttonNum > this.buttonNums.length) {
+            throw new Error("invalid button number");
+        }
+
         this.currentNum = (this.currentNum + this.buttonNums[buttonNum - 1]) % this.overflow;
-        this.currentMove++;
+        this._checkIsWin();
+        if (!this.isWin) this.currentMove++;
     }
 
-    randint(min = 1, max = 100) {
+    _checkIsWin() {
+        this.isWin = this.currentNum === this.targetNum;
+    }
+
+    _randint(min = 1, max = 100) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        if (min > max) [min, max] = [max, min];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (Math.abs(max - min) + 1)) + min;
+    }
+}
+
+class NinetynineGame extends Game {
+    constructor() {
+        super(99, 10);
     }
 }
