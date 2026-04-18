@@ -1,0 +1,43 @@
+:root {
+    --bg-colour: #f7f7f7;
+    --btn-add-colour: #91b4ff;
+    --btn-sub-colour: #fc93b4;
+}
+
+body {
+    background-color: var(--bg-colour);
+}
+
+button:hover {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#btns>button {
+    height: 5.5rem;
+    border: 0.35rem solid var(--bg-colour);
+    border-radius: 1.5rem;
+
+    color: #f7f7f7;
+    font-size: 2rem;
+    font-family: monospace;
+
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.btn-add {
+    background-color: var(--btn-add-colour);
+}
+
+.btn-sub {
+    background-color: var(--btn-sub-colour);
+}
