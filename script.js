@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const num = document.getElementById("num");
     const move = document.getElementById("move");
-    const restart = document.getElementById("restart");
+    const replay = document.getElementById("replay");
     const actions = {
         restart: document.getElementById("action-restart")
     };
@@ -15,7 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("btn5"),
     ];
 
-    restart.addEventListener("click", startNewGame);
+    if (!sessionStorage.getItem('helpModalLoaded')) {
+        const helpModal = new bootstrap.Modal(document.getElementById('helpModal'));
+        helpModal.show();
+        sessionStorage.setItem('helpModalLoaded', 'true');
+    }
+
+    replay.addEventListener("click", startNewGame);
     actions.restart.addEventListener("click", startNewGame);
 
     for (let i = 0; i < btns.length; i++) {
@@ -45,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (game.isWin) {
             move.textContent = `Won in ${game.currentMove} moves`;
-            restart.hidden = false;
+            replay.hidden = false;
 
             for (let i = 0; i < btns.length; i++) {
                 btns[i].innerText = game.getButtonDisplayValue(i + 1);
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         move.textContent = `Move ${game.currentMove}`;
-        restart.hidden = true;
+        replay.hidden = true;
     }
 
     startNewGame();

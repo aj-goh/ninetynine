@@ -37,7 +37,7 @@
         <div id="game" class="d-flex flex-column align-items-center mt-5">
             <h1 id="num">0</h1>
             <p id="move">Move 1</p>
-            <button id="restart" hidden><i class="bi bi-arrow-clockwise me-1"></i>Play again</button>
+            <button id="replay" hidden><i class="bi bi-arrow-clockwise me-1"></i>Play again</button>
 
             <div id="btns" class="container my-5 row">
                 <button id="btn1" class="btn-add col-4 col-md">+</button>
@@ -51,13 +51,14 @@
     <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center px-3 py-5">
+                <button class="btn-close position-absolute top-0 end-0 m-4" data-bs-dismiss="modal"></button>
                 <h2 class="display-4 mb-4">How to Play</h2>
                 <p class="mx-auto mb-2">Start from a random number</p>
                 <p class="mx-auto mb-2">
                     Tap <span class="text-add fw-bold"><i class="bi bi-plus-square-fill"></i> blue</span> to add,
                     and <span class="text-sub fw-bold"><i class="bi bi-dash-square-fill"></i> pink</span> to subtract
                 </p>
-                <p class="mx-auto mb-0">Reach <strong>99</strong> in as few moves as possible</p>
+                <p class="mx-auto mb-2">Reach <strong>99</strong> in as few moves as possible</p>
             </div>
         </div>
     </div>

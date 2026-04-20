@@ -12,6 +12,7 @@ body {
 }
 
 button {
+    color: black;
     border: 0;
     background-color: transparent;
 }
@@ -28,17 +29,16 @@ button {
 }
 
 #actions button {
-    color: black;
     border-radius: 9999px;
 }
 
 #num {
     font-weight: 200;
     font-size: 7rem;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.4rem;
 }
 
-#restart {
+#replay {
     font-weight: 300;
     opacity: 50%;
 }
