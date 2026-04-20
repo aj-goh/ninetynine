@@ -24,12 +24,30 @@ class Game {
         if (this.isWin) return;
 
         if (!Number.isInteger(buttonNum) || buttonNum < 1 || buttonNum > this.buttonNums.length) {
-            throw new Error("invalid button number");
+            throw new Error("Invalid button number");
         }
 
         this.currentNum = (this.currentNum + this.buttonNums[buttonNum - 1]) % this.overflow;
         this._checkIsWin();
         if (!this.isWin) this.currentMove++;
+    }
+
+    getButtonHiddenValue(buttonNum) {
+        if (!Number.isInteger(buttonNum) || buttonNum < 1 || buttonNum > this.buttonNums.length) {
+            throw new Error("Invalid button number");
+        }
+
+        const value = this.buttonNums[buttonNum - 1];
+        return value <= this.overflow / 2 ? "+" : "-";
+    }
+
+    getButtonDisplayValue(buttonNum) {
+        if (!Number.isInteger(buttonNum) || buttonNum < 1 || buttonNum > this.buttonNums.length) {
+            throw new Error("Invalid button number");
+        }
+
+        const value = this.buttonNums[buttonNum - 1];
+        return value <= this.overflow / 2 ? `+${value}` : `-${this.overflow - value}`;
     }
 
     _checkIsWin() {

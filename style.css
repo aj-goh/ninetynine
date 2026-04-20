@@ -11,6 +11,11 @@ body {
     font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
+button {
+    border: 0;
+    background-color: transparent;
+}
+
 #title {
     font-weight: 200;
     font-size: 1.5rem;
@@ -21,8 +26,6 @@ body {
 }
 
 #actions button {
-    border: 0;
-    background-color: transparent;
     border-radius: 9999px;
 }
 
@@ -30,6 +33,11 @@ body {
     font-weight: 200;
     font-size: 7rem;
     letter-spacing: -0.5rem;
+}
+
+#restart {
+    font-weight: 300;
+    opacity: 50%;
 }
 
 @media (max-width: 767px) {
@@ -51,8 +59,7 @@ body {
     border-radius: 1.5rem;
 
     color: #f7f7f7;
-    font-size: 2rem;
-    font-family: monospace;
+    font-size: 1.5rem;
 
     cursor: pointer;
     transition: transform 0.1s ease;
@@ -64,7 +71,7 @@ body {
     inset: 0;
     background: rgba(0, 0, 0, 0);
     transition: background 0.1s ease;
-    border-radius: inherit;
+    border-radius: 0;
 }
 
 #btns>button:active {
@@ -84,19 +91,6 @@ body {
 button:disabled {
     opacity: 0.5;
     pointer-events: none;
-}
-
-#btns>button {
-    height: 6rem;
-    border: 0.4rem solid var(--bg-colour);
-    border-radius: 1.5rem;
-
-    color: #f7f7f7;
-    font-size: 2rem;
-    font-family: monospace;
-
-    cursor: pointer;
-    transition: all 0.1s ease;
 }
 
 .btn-add {

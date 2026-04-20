@@ -25,9 +25,9 @@
         <div class="d-flex justify-content-between">
             <h2 id="title">ninetynine</h2>
             <ul id="actions" class="d-flex flex-row gap-2">
-                <!-- <li><button><i class="h3 bi bi-arrow-clockwise"></i></button></li> -->
-                <!-- <li><button><i class="h3 bi bi-question-circle"></i></button></li> -->
-                <!-- <li><button><i class="h3 bi bi-gear"></i></button></li> -->
+                <li><button id="action-restart"><i class="h3 bi bi-arrow-clockwise"></i></button></li>
+                <!-- <li><button id="action-info"><i class="h3 bi bi-question-circle"></i></button></li> -->
+                <!-- <li><button id="action-settings"><i class="h3 bi bi-gear"></i></button></li> -->
             </ul>
         </div>
         <hr class="m-0">
@@ -36,6 +36,7 @@
         <div id="game" class="d-flex flex-column align-items-center mt-5">
             <h1 id="num">0</h1>
             <p id="move">Move 1</p>
+            <button id="restart" hidden><i class="bi bi-arrow-clockwise me-1"></i>Play again</button>
 
             <div id="btns" class="container my-5 row">
                 <button id="btn1" class="btn-add col-4 col-md">+</button>
