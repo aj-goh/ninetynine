@@ -1,19 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 :root {
     --bg-colour: #f7f7f7;
-    --btn-add-colour: #91b4ff;
-    --btn-sub-colour: #fc93b4;
+    --btn-add-colour: #a7c6ff;
+    --btn-sub-colour: #f4a4c0;
 }
 
 body {
     background-color: var(--bg-colour);
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
-button:hover {
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+#title {
+    font-weight: 200;
+    font-size: 1.5rem;
 }
 
-button:active {
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+#actions {
+    list-style-type: none;
+}
+
+#actions button {
+    border: 0;
+    background-color: transparent;
+    border-radius: 9999px;
+}
+
+#num {
+    font-weight: 200;
+    font-size: 7rem;
+    letter-spacing: -0.5rem;
+}
+
+@media (max-width: 767px) {
+    #btns {
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+#btns>button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    position: relative;
+    overflow: hidden;
+
+    height: 6rem;
+    border: 0.4rem solid var(--bg-colour);
+    border-radius: 1.5rem;
+
+    color: #f7f7f7;
+    font-size: 2rem;
+    font-family: monospace;
+
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#btns>button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.1s ease;
+    border-radius: inherit;
+}
+
+#btns>button:active {
+    transform: scale(0.95);
+}
+
+#btns>button:active::after {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@media (hover: hover) {
+    #btns>button:hover::after {
+        background: rgba(0, 0, 0, 0.1);
+    }
 }
 
 button:disabled {
@@ -22,8 +87,8 @@ button:disabled {
 }
 
 #btns>button {
-    height: 5.5rem;
-    border: 0.35rem solid var(--bg-colour);
+    height: 6rem;
+    border: 0.4rem solid var(--bg-colour);
     border-radius: 1.5rem;
 
     color: #f7f7f7;

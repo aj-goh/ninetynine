@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ninetynine</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/cSdmW0dv/IMG-4965.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -19,12 +21,23 @@
 </head>
 
 <body>
-    <main class="container mt-5">
-        <div id="game" class="d-flex flex-column align-items-center">
-            <h1 id="num" class="display-1">0</h1>
+    <header class="container mt-3">
+        <div class="d-flex justify-content-between">
+            <h2 id="title">ninetynine</h2>
+            <ul id="actions" class="d-flex flex-row gap-2">
+                <!-- <li><button><i class="h3 bi bi-arrow-clockwise"></i></button></li> -->
+                <!-- <li><button><i class="h3 bi bi-question-circle"></i></button></li> -->
+                <!-- <li><button><i class="h3 bi bi-gear"></i></button></li> -->
+            </ul>
+        </div>
+        <hr class="m-0">
+    </header>
+    <main>
+        <div id="game" class="d-flex flex-column align-items-center mt-5">
+            <h1 id="num">0</h1>
             <p id="move">Move 1</p>
 
-            <div id="btns" class="w-100 my-3 row">
+            <div id="btns" class="container my-5 row">
                 <button id="btn1" class="btn-add col-4 col-md">+</button>
                 <button id="btn2" class="btn-add col-4 col-md">+</button>
                 <button id="btn3" class="btn-add col-4 col-md">+</button>
