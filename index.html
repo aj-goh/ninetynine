@@ -26,11 +26,12 @@
             <h2 id="title">ninetynine</h2>
             <ul id="actions" class="d-flex flex-row gap-2">
                 <li><button id="action-restart"><i class="h3 bi bi-arrow-clockwise"></i></button></li>
-                <!-- <li><button id="action-info"><i class="h3 bi bi-question-circle"></i></button></li> -->
+                <li><button id="action-help" data-bs-toggle="modal" data-bs-target="#helpModal"><i
+                            class="h3 bi bi-question-circle"></i></button></li>
                 <!-- <li><button id="action-settings"><i class="h3 bi bi-gear"></i></button></li> -->
             </ul>
         </div>
-        <hr class="m-0">
+        <hr class="my-2">
     </header>
     <main>
         <div id="game" class="d-flex flex-column align-items-center mt-5">
@@ -47,6 +48,19 @@
             </div>
         </div>
     </main>
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center px-3 py-5">
+                <h2 class="display-4 mb-4">How to Play</h2>
+                <p class="mx-auto mb-2">Start from a random number</p>
+                <p class="mx-auto mb-2">
+                    Tap <span class="text-add fw-bold"><i class="bi bi-plus-square-fill"></i> blue</span> to add,
+                    and <span class="text-sub fw-bold"><i class="bi bi-dash-square-fill"></i> pink</span> to subtract
+                </p>
+                <p class="mx-auto mb-0">Reach <strong>99</strong> in as few moves as possible</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

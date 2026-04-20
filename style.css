@@ -23,6 +23,8 @@ button {
 
 #actions {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 #actions button {
@@ -99,4 +101,12 @@ button:disabled {
 
 .btn-sub {
     background-color: var(--btn-sub-colour);
+}
+
+.text-add {
+    color: var(--btn-add-colour);
+}
+
+.text-sub {
+    color: var(--btn-sub-colour);
 }
