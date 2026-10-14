@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    --bg-colour: #f7f7f7;
-    --btn-add-colour: #a7c6ff;
-    --btn-sub-colour: #f4a4c0;
+    --nn-bg: #f7f7f7;
+    --nn-text: #000000;
+    --nn-blue: #a7c6ff;
+    --nn-pink: #f4a4c0;
 }
 
 body {
-    background-color: var(--bg-colour);
+    background-color: var(--nn-bg);
     font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
 button {
-    color: black;
+    color: var(--nn-text);
     border: 0;
     background-color: transparent;
 }
@@ -29,6 +30,8 @@ button {
 }
 
 #actions button {
+    -webkit-text-stroke: 0.02rem var(--nn-bg);
+    padding: 0.15rem 0.33rem;
     border-radius: 9999px;
 }
 
@@ -58,7 +61,7 @@ button {
     overflow: hidden;
 
     height: 6rem;
-    border: 0.4rem solid var(--bg-colour);
+    border: 0.4rem solid var(--nn-bg);
     border-radius: 1.5rem;
 
     color: #f7f7f7;
@@ -96,18 +99,18 @@ button:disabled {
     pointer-events: none;
 }
 
-.btn-add {
-    background-color: var(--btn-add-colour);
+.nn-blue-bg {
+    background-color: var(--nn-blue);
 }
 
-.btn-sub {
-    background-color: var(--btn-sub-colour);
+.nn-pink-bg {
+    background-color: var(--nn-pink);
 }
 
-.text-add {
-    color: var(--btn-add-colour);
+.nn-blue-text {
+    color: var(--nn-blue);
 }
 
-.text-sub {
-    color: var(--btn-sub-colour);
+.nn-pink-text {
+    color: var(--nn-pink);
 }

@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .toString()
                 .split("")
                 .map((digit, i) =>
-                    `<span style="color:${i % 2 ? 'var(--btn-sub-colour)' : 'var(--btn-add-colour)'}">${digit}</span>`
+                    `<span style="color:${i % 2 ? 'var(--nn-pink)' : 'var(--nn-blue)'}">${digit}</span>`
                 )
                 .join("");
 
